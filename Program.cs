@@ -1,6 +1,7 @@
 using System;
 
-class Appointment {
+class Appointment 
+{
     List<string> periods = new List<string>();
 
     Appointment() {}
@@ -15,7 +16,7 @@ class Appointment {
         {
             periods = value;
         }
-
+    }
 
     public bool isMinuteFree(int period, int minute) 
     {
