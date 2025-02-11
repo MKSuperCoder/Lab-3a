@@ -1,8 +1,21 @@
 using System;
 
 class Appointment {
-    
+    List<string> appointments = new List<string>();
+
     Appointment() {}
+
+    public List<String> appointments
+    {
+        get
+        {
+            return this.cards;
+        }
+        set
+        {
+            cards = value;
+        }
+
 
     public int isMinuteFree(int period, int minute) 
     {
