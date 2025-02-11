@@ -1,19 +1,19 @@
 using System;
 
 class Appointment {
-    List<string> appointments = new List<string>();
+    List<string> periods = new List<string>();
 
     Appointment() {}
 
-    public List<String> appointments
+    public List<String> periods
     {
         get
         {
-            return this.cards;
+            return this.periods;
         }
         set
         {
-            cards = value;
+            periods = value;
         }
 
 
@@ -30,5 +30,7 @@ class Appointment {
 class Test {
     static void main() {
         Console.WriteLine("Hello");
+
+        
     }
 }
