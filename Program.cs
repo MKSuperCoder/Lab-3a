@@ -43,37 +43,39 @@ class Appointment
         }
 
         }
-    //Marcus
-    public int findFreeBlock(int period, int duration) 
-    {
-        for (int i = 0; i < duration; i++) 
+        //Marcus
+        public int findFreeBlock(int period, int duration) 
         {
-            if (isMinuteFree(period, i))
+            for (int i = 0; i < duration; i++) 
             {
-                return i;
-            }
-            else 
-            {
-                return -1;
-            }
-        }
-    }
-    //Marcus
-    public bool makeAppointment(int startPeriod, int endPeriod, int duration) {
-        for (int i = startPeriod; i < endPeriod; i++) 
-        {
-            for (int minute = 0; i < duration; minute++) {
-                 if (isMinuteFree(i, duration)) 
+                if (isMinuteFree(period, i))
                 {
-                    reserveBlock(i, minute, duration);
-                    return true;
+                    return i;
                 }
                 else 
                 {
-                    return false;
+                    return -1;
                 }
             }
+        }
+        //Marcus
+        public bool makeAppointment(int startPeriod, int endPeriod, int duration) 
+        {
+            for (int i = startPeriod; i < endPeriod; i++) 
+            {
+                for (int minute = 0; i < duration; minute++) {
+                    if (isMinuteFree(i, duration)) 
+                    {
+                        reserveBlock(i, minute, duration);
+                        return true;
+                    }
+                    else 
+                    {
+                        return false;
+                    }   
+                }
            
+            }
         }
     }
 }
