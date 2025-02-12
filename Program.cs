@@ -19,17 +19,17 @@ class Appointment
             periods = value;
         }
     }
-    // Joseph
+            // Joseph1
     public Appointment(int startPeriod, int endPeriod) {
         this.startPeriod = startPeriod;
         this.endPeriod = endPeriod;
 
-        // Joseph
+        // Joseph2
         public bool isMinuteFree(int period, int minute) {
             return period == startPeriod && minute >= startMinute && minute < 60 
                 period == endPeriod && minute >= 0 && minute < endMinute 
                 period > startPeriod && period < endPeriod;
-        // Joseph
+        // Joseph3
         public bool reserveBlock(int period, int startMinute, int duration)
         {
             if (isMinuteFree(period, startMinute) && isMinuteFree(period, startMinute + duration))
@@ -79,6 +79,8 @@ class Appointment
 
             return isBooked;
         }
+
+        
     }
 }
 
