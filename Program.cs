@@ -82,11 +82,12 @@ class Appointment
     }
 }
 
-// Emmanuel 
+// Marcus
 class Test {
     static void main() {
-        Console.WriteLine("Hello");
-        Console.WriteLine("Hello");
+        Appointment appointment1 = new Appointment(1, 2);
+        Console.WriteLine(appointment1.findFreeBlock(2, 20));
+        Console.WriteLine(appointment1.makeAppointment(1, 8, 15));
         
     }
 }
