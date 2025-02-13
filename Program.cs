@@ -1,7 +1,7 @@
 using System;
 
 class Appointment 
-{
+{   
     //Marcus
     List<string> periods = new List<string>();
 
@@ -9,42 +9,44 @@ class Appointment
 
     //Marcus
     public List<String> periods
-    {
+    {       
         get
         {
-            return this.periods;
+            return this.periods;        
         }
         set
         {
-            periods = value;
+            periods = value;        
         }
     }
             // Joseph1
     public Appointment(int startPeriod, int endPeriod) {
         this.startPeriod = startPeriod;
-        this.endPeriod = endPeriod;
+        this.endPeriod = endPeriod;     
+    }
 
         // Joseph2
-        public bool isMinuteFree(int period, int minute) {
-            return period == startPeriod && minute >= startMinute && minute < 60 
-                period == endPeriod && minute >= 0 && minute < endMinute 
+        public bool isMinuteFree(int period, int minute) {          
+            return period == startPeriod && minute >= startMinute && minute < 60    
+                period == endPeriod && minute >= 0 && minute < endMinute        
                 period > startPeriod && period < endPeriod;
-        // Joseph3
-        public bool reserveBlock(int period, int startMinute, int duration)
+        // Joseph3      
+        public bool reserveBlock(int period, int startMinute, int duration)             
         {
             if (isMinuteFree(period, startMinute) && isMinuteFree(period, startMinute + duration))
-            {
-            return true;
-            }
-            else
-            {
-            return false;
-            }
-        }
-
+            {                   
+                periods.Add(period + ":" + startMinute + "-" + (startMinute + duration));
+            return true;        
+            }       
+            else        
+            {           
+            return false;           
+            }       
+        }       
+        // Joseph4
         }
         //Marcus
-        public int findFreeBlock(int period, int duration) 
+        public int findFreeBlock(int period, int duration)      
         {
             for (int i = 0; i < duration; i++) 
             {
