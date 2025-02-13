@@ -2,7 +2,7 @@ using System;
 
 public class Appointment
 {
-    //joseph.1
+    //joseph.1 //test
     private bool[,] schedule = new bool[8, 60];
 
     public bool isMinuteFree(int period, int minute)
