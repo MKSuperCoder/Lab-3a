@@ -20,16 +20,25 @@ class Appointment
         }
     }
             // Joseph1 //new test
+    public Appointment() {}
+
+    public List<string> Periods
+    {       
+        get { return this.periods; }       
+        set { periods = value; }       
+    }
+
     public Appointment(int startPeriod, int endPeriod) {
         this.startPeriod = startPeriod;
         this.endPeriod = endPeriod;     
     }
 
         // Joseph2
-        public bool isMinuteFree(int period, int minute) {          
-            return period == startPeriod && minute >= startMinute && minute < 60    
-                period == endPeriod && minute >= 0 && minute < endMinute        
-                period > startPeriod && period < endPeriod;
+        public bool IsMinuteFree(int period, int minute) {          
+        return (period == startPeriod && minute >= startMinute && minute < 60) ||    
+               (period == endPeriod && minute >= 0 && minute < endMinute) ||       
+               (period > startPeriod && period < endPeriod);
+    }
         // Joseph3      
         public bool reserveBlock(int period, int startMinute, int duration)             
         {
@@ -83,9 +92,7 @@ class Appointment
         }
 
         
-    }
-}
-
+    
 // Emmanuel 
 class Test {
     static void main() {
