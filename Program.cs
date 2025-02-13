@@ -19,7 +19,7 @@ class Appointment
             periods = value;        
         }
     }
-            // Joseph1 //test commit// test//
+            // Joseph1 
     public Appointment(int startPeriod, int endPeriod) {
         this.startPeriod = startPeriod;
         this.endPeriod = endPeriod;     
