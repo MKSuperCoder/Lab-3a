@@ -3,7 +3,7 @@ using System;
 class Appointment 
 {
     // Emmanuel
-    public bool makeAppointment(int startPeriod, int endPeriod, int duration)
+    public bool MakeAppointment(int startPeriod, int endPeriod, int duration)
     {
         bool isBooked = false;
 
@@ -25,7 +25,7 @@ class Appointment
 
             if (startMinute == -1)
             {
-                Console.WriteLine("Sorry! Unable to book appointment.")
+                Console.WriteLine("Sorry! Unable to book appointment.");
             }
         }
         else
@@ -38,8 +38,10 @@ class Appointment
 }
 
 // Emmanuel
-class Test {
-    static void main() {
+class Test
+{
+    static void Main()
+    {
         
         
     }
