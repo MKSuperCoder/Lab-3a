@@ -11,40 +11,50 @@ class Appointment
     }
 
     //Marcus
-    private bool IsMinuteFree(int period, int minute)
+    private bool isMinuteFree(int period, int minute)
     {
         if (schedule[period - 1, minute] == false) 
             return true;
         else
             return false;
     }
-    
+    private void reserveBlock(int period, int startMinute, int duration) {
+        for (int i = 0; i < duration; i++) {
+            schedule[period - 1, startMinute + i] = true;
+        }
+    }
     //Marcus
-    public int findFreeBlock(int period, int duration)
+    public int FindFreeBlock(int period, int duration)
     {
-        int count = 0;
+
+        int freeMinuteCount = 0;
+        int startingMinuteFree = 0;
         for (int minute = 0; minute < 60; minute++)
         {
-            if (IsMinuteFree(period, minute))
-            {
-                count++;
-                if (count == duration)
+                if (isMinuteFree(period, minute))
                 {
-                    return minute - duration + 1;
+                    startingMinuteFree = minute;
+                    freeMinuteCount++;
+                    if (freeMinuteCount == duration)
+                    {
+                        return startingMinuteFree;
+                    }
                 }
-            }
-            else
-            {
-                count = 0;
-            }
+                else 
+                {
+                    Console.WriteLine("No Free Block found.");
+                }
+            
+                
         }
         return -1; 
     }
 
     
 }
+//Emmanuel
 class Test {
-    static void Main()
+    static void Main(string[] args)
     {
         
         
