@@ -89,3 +89,24 @@ class Appointment
         return isBooked;
     }
 }
+
+// Emmanuel
+class Program
+{
+    static void Main()
+    {
+        Appointment appointment1 = new Appointment();
+
+        bool appointmentMade = false;
+        appointmentMade = appointment1.MakeAppointment(1, 4, 20);
+
+        if (appointmentMade == true)
+        {
+            Console.WriteLine("Appointment #1 has been successfully booked.");
+        }
+        else
+        {
+            Console.WriteLine("Appointment #1 not booked.");
+        }
+    }
+}
