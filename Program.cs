@@ -10,11 +10,11 @@ public class Appointment
         return !schedule[period - 1, minute];
     }
         // Joseph.2      
-        public void reserveBlock(int period, int startMinute, int duration)
+    public void reserveBlock(int period, int startMinute, int duration)
     {
-        for (int i = startMinute; i < startMinute + duration; i++)
+        for (int i = 0; i < duration; i++)
         {
-            schedule[period - 1, i] = true;
+            schedule[period - 1, startMinute + i] = true;
         }
     }    
         // Joseph.3
