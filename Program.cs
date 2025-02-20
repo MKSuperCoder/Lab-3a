@@ -54,12 +54,20 @@ public class Appointment
 
         
     
-// Emmanuel 
-class Test {
-    static void main() {
-        Console.WriteLine("Hello");
-        Console.WriteLine("Hello");
-        
+class Program
+{
+    static void Main()
+    {
+        Appointment app = new Appointment();
+
+        app.reserveBlock(2, 0, 25);
+        app.reserveBlock(2, 30, 30);
+        app.reserveBlock(3, 15, 26);
+        app.reserveBlock(4, 0, 5);
+        app.reserveBlock(4, 30, 14);
+
+        Console.WriteLine(app.makeAppointment(2, 4, 22));
+        Console.WriteLine(app.makeAppointment(3, 4, 3));
+        Console.WriteLine(app.makeAppointment(2, 4, 30));
     }
-}
 }
