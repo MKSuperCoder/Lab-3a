@@ -18,22 +18,24 @@ public class Appointment
         }
     }    
         // Joseph.3
-        }
-        //Marcus
-        public int findFreeBlock(int period, int duration)      
+        
+         public int findFreeBlock(int period, int duration)
+    {
+        for (int start = 0; start <= 60 - duration; start++)
         {
-            for (int i = 0; i < duration; i++) 
+            bool free = true;
+            for (int i = 0; i < duration; i++)
             {
-                if (isMinuteFree(period, i))
+                if (!isMinuteFree(period, start + i))
                 {
-                    return i;
-                }
-                else 
-                {
-                    return -1;
+                    free = false;
+                    break;
                 }
             }
+            if (free) return start;
         }
+        return -1;
+    }
 
         // Emmanuel
         public bool makeAppointment(int startPeriod, int endPeriod, int duration) {
@@ -65,4 +67,5 @@ class Test {
         Console.WriteLine("Hello");
         
     }
+}
 }
