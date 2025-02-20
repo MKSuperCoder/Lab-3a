@@ -24,26 +24,28 @@ class Appointment
         }
     }
     //Marcus
-    public int findFreeBlock(int period, int duration)
+    public int FindFreeBlock(int period, int duration)
     {
-        int minuteCount = 0;
+
+        int freeMinuteCount = 0;
         int startingMinuteFree = 0;
         for (int minute = 0; minute < 60; minute++)
         {
-            if (isMinuteFree(period, minute))
-            {
-                startingMinuteFree = minute;
-                minuteCount++;
-                if (minuteCount == duration)
+                if (isMinuteFree(period, minute))
                 {
-                    return startingMinuteFree;
+                    startingMinuteFree = minute;
+                    freeMinuteCount++;
+                    if (freeMinuteCount == duration)
+                    {
+                        return startingMinuteFree;
+                    }
                 }
+                else 
+                {
+                    Console.WriteLine("No Free Block found.");
+                }
+            
                 
-            }
-            else
-            {
-                Console.WriteLine("There is no available block in the specified period.");
-            }
         }
         return -1; 
     }
