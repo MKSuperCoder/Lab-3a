@@ -1,6 +1,6 @@
 using System;
 
-class Appointment 
+public class Appointment
 {
     //Marcus
     public bool[,] schedule;
@@ -10,22 +10,18 @@ class Appointment
         schedule = new bool[8, 60];
     }
     
-    //Marcus
-    private bool IsMinuteFree(int period, int minute)
+    public bool isMinuteFree(int period, int minute)
     {
-        if (schedule[period - 1, minute] == false) 
-            return true;
-        else
-            return false;
+        return !schedule[period - 1, minute];
     }
-    
-    private void ReserveBlock(int period, int startMinute, int duration) 
+        // Joseph.2 //test     
+    public void reserveBlock(int period, int startMinute, int duration)
     {
-        for (int i = 0; i < duration; i++) 
+        for (int i = 0; i < duration; i++)
         {
             schedule[period - 1, startMinute + i] = true;
         }
-    }
+    }    
     
     //Marcus
     public int FindFreeBlock(int period, int duration)
