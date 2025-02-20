@@ -37,26 +37,20 @@ public class Appointment
         return -1;
     }
 
-        // Emmanuel
-        public bool makeAppointment(int startPeriod, int endPeriod, int duration) {
-            bool isBooked = false;
-
-            if (((startPeriod >= 1) && (startPeriod <= 8)) && ((endPeriod >= 1) && (endPeriod <= 8)) && ((duration >= 0) && (duration <= 59))) {
-                // Search for earliest available block of duration minutes 
-                // Use findFreeBlock(int period, int duration) - returns -1 if no block is available
-                for (int i = startPeriod; i <= endPeriod; i++) {
-                    int block = -1;
-                    block = findFreeBlock(i, duration);
-                // test
-                    if (block != -1) {
-                        reserveBlock()
-                        isBooked = true;
-                    }
-                }
+         public bool makeAppointment(int startPeriod, int endPeriod, int duration)
+    {
+        for (int period = startPeriod; period <= endPeriod; period++)
+        {
+            int startMinute = findFreeBlock(period, duration);
+            if (startMinute != -1)
+            {
+                reserveBlock(period, startMinute, duration);
+                return true;
             }
-
-            return isBooked;
         }
+        return false;
+    }
+}
 
         
     
