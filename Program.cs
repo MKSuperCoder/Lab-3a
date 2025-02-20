@@ -9,7 +9,7 @@ public class Appointment
     {
         return !schedule[period - 1, minute];
     }
-        // Joseph.2      
+        // Joseph.2 //test     
     public void reserveBlock(int period, int startMinute, int duration)
     {
         for (int i = 0; i < duration; i++)
